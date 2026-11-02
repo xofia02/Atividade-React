@@ -1,0 +1,21 @@
+/* DESAFIO: área fixa onde os toasts do contexto global aparecem */
+
+/* Celular: os toasts ocupam a largura da tela, na parte de baixo */
+.toast-container-desafio {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Tablet e desktop: os toasts ficam no canto inferior direito */
+@media (min-width: 700px) {
+  .toast-container-desafio {
+    left: auto;
+    width: 360px;
+  }
+}

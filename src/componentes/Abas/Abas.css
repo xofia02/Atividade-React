@@ -1,0 +1,45 @@
+/* No celular, se as abas não couberem, a lista rola para o lado */
+.abas-lista {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  box-shadow: inset 0 -1px var(--cor-borda); /* linha cinza embaixo das abas */
+}
+
+.abas-botao {
+  flex-shrink: 0;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--cor-texto-suave);
+  white-space: nowrap;
+}
+
+.abas-botao:hover {
+  color: var(--cor-texto);
+}
+
+.abas-botao-ativa {
+  color: var(--cor-destaque);
+  border-bottom-color: var(--cor-destaque);
+  font-weight: 600;
+}
+
+.abas-botao:focus-visible {
+  outline-offset: -3px;
+}
+
+.abas-painel {
+  padding: 16px 4px 0;
+}
+
+.abas-painel h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.abas-painel p {
+  margin: 0;
+  max-width: 70ch;
+}

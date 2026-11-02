@@ -1,0 +1,32 @@
+/* Estilos globais da página inteira */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Acessibilidade: contorno visível ao navegar pelo teclado (tecla Tab) */
+button:focus-visible {
+  outline: 3px solid var(--cor-destaque, #0f766e);
+  outline-offset: 2px;
+}
+
+/* Acessibilidade: desliga animações para quem pediu "reduzir movimento" no sistema */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

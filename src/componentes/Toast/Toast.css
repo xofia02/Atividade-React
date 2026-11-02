@@ -1,0 +1,55 @@
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-left: 5px solid;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #1c2430;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  animation: toast-entrar 0.25s ease-out;
+}
+
+/* Cada tipo de toast tem uma cor na borda esquerda */
+.toast-sucesso {
+  border-left-color: #16a34a;
+}
+
+.toast-erro {
+  border-left-color: #dc2626;
+}
+
+.toast-informacao {
+  border-left-color: #2563eb;
+}
+
+.toast-texto {
+  flex: 1;
+}
+
+.toast-texto p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+}
+
+.toast-botao-fechar {
+  padding: 0 4px;
+  border: none;
+  background: none;
+  color: #5b6676;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Animação de entrada: o toast sobe um pouco enquanto aparece */
+@keyframes toast-entrar {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

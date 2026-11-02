@@ -1,0 +1,168 @@
+/* ---------- Cores dos temas (trocadas pelo Menu Suspenso) ---------- */
+
+.tema-claro {
+  --cor-fundo: #f3f5f7;
+  --cor-cartao: #ffffff;
+  --cor-texto: #1c2430;
+  --cor-texto-suave: #5b6676;
+  --cor-borda: #dce1e7;
+  --cor-destaque: #0f766e;
+  --cor-destaque-texto: #ffffff;
+  --cor-destaque-suave: #dcefed;
+}
+
+.tema-escuro {
+  --cor-fundo: #11161d;
+  --cor-cartao: #1a212b;
+  --cor-texto: #e6ebf1;
+  --cor-texto-suave: #9aa6b5;
+  --cor-borda: #2e3744;
+  --cor-destaque: #2dd4bf;
+  --cor-destaque-texto: #062b27;
+  --cor-destaque-suave: #173a37;
+}
+
+/* ---------- Estrutura da página ---------- */
+
+.app {
+  min-height: 100vh;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cabecalho,
+.grade-de-componentes,
+.rodape {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.cabecalho {
+  padding-top: 32px;
+}
+
+.cabecalho h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+}
+
+.cabecalho p {
+  margin: 4px 0 0;
+  color: var(--cor-texto-suave);
+}
+
+.rodape {
+  padding-bottom: 24px;
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ---------- Responsividade: grade de cartões ---------- */
+
+/* Celular: 1 coluna */
+.grade-de-componentes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/* Tablet: 2 colunas. Abas e Acordeão ocupam a linha inteira */
+@media (min-width: 700px) {
+  .grade-de-componentes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .cartao-largo {
+    grid-column: span 2;
+  }
+}
+
+/* Desktop: 4 colunas. Abas e Acordeão ficam lado a lado, e os outros 4 embaixo */
+@media (min-width: 1200px) {
+  .grade-de-componentes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Cartões ---------- */
+
+.cartao {
+  min-width: 0; /* impede que um conteúdo largo (como a lista de abas) estique o cartão */
+  padding: 20px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  background: var(--cor-cartao);
+}
+
+.cartao h2 {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.cartao-descricao {
+  margin: 0 0 16px;
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+}
+
+/* ---------- Botões genéricos ---------- */
+
+.botao {
+  padding: 8px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-cartao);
+  color: var(--cor-texto);
+}
+
+.botao:hover:not(:disabled) {
+  border-color: var(--cor-destaque);
+}
+
+.botao-principal {
+  border-color: var(--cor-destaque);
+  background: var(--cor-destaque);
+  color: var(--cor-destaque-texto);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.grupo-de-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Conteúdo da Paginação ---------- */
+
+.lista-de-curiosidades {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-de-curiosidades h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.lista-de-curiosidades p {
+  margin: 2px 0 0;
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+}

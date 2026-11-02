@@ -1,0 +1,73 @@
+.acordeao {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.acordeao-item {
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.acordeao-titulo {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.acordeao-botao {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: inherit;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* O contorno de foco fica para dentro, porque o item corta o que passa da borda */
+.acordeao-botao:focus-visible {
+  outline-offset: -3px;
+}
+
+.acordeao-item-aberto .acordeao-botao {
+  color: var(--cor-destaque);
+}
+
+/* O "+" gira 45 graus e vira um "x" quando o item está aberto */
+.acordeao-icone {
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.acordeao-item-aberto .acordeao-icone {
+  transform: rotate(45deg);
+}
+
+/* Transição suave: a altura da linha vai de 0fr (fechado) até 1fr (aberto) */
+.acordeao-conteudo {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.3s ease, visibility 0.3s;
+}
+
+.acordeao-item-aberto .acordeao-conteudo {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.acordeao-conteudo-interno {
+  overflow: hidden;
+}
+
+.acordeao-conteudo-interno p {
+  margin: 0;
+  padding: 0 16px 16px;
+  color: var(--cor-texto-suave);
+}

@@ -1,0 +1,31 @@
+.barra-de-progresso {
+  margin-bottom: 16px;
+}
+
+.barra-de-progresso-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.barra-de-progresso-porcentagem {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums; /* números com a mesma largura, para não "pular" */
+}
+
+/* O trilho é o fundo da barra */
+.barra-de-progresso-trilho {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--cor-destaque-suave);
+  overflow: hidden;
+}
+
+/* O preenchimento cresce conforme a largura muda */
+.barra-de-progresso-preenchimento {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--cor-destaque);
+  transition: width 0.3s ease;
+}

@@ -1,0 +1,54 @@
+/* position: relative permite posicionar a lista logo abaixo do botão */
+.menu-suspenso {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-suspenso-botao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-cartao);
+  color: var(--cor-texto);
+}
+
+.menu-suspenso-seta {
+  transition: transform 0.2s ease;
+}
+
+.menu-suspenso-botao[aria-expanded='true'] .menu-suspenso-seta {
+  transform: rotate(180deg);
+}
+
+.menu-suspenso-lista {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 10;
+  min-width: 100%;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-cartao);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.menu-suspenso-opcao {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  color: var(--cor-texto);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.menu-suspenso-opcao:hover {
+  background: var(--cor-destaque-suave);
+}
